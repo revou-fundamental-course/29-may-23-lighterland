@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>KonpaniKu | コンパニックー</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body id="popup-page">
+    <div class="container-xxl bg-white p-0">
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <div class="mb-2">
+                    <input type="text" class="form-control" id="nameInput" placeholder="Nama" required="required" onkeydown="handleKeyDown(event)">
+                </div>
+                <p id="error" class="error-message"></p>
+                <button class="btn btn-primary w-100 py-2" style="transition: 0s;" type="submit" onclick="closePopup()">Submit</button>
+            </div>
+        </div>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0" id="navbar">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="text-primary m-0"><i class="fa-sharp fa-solid fa-building m-3"></i>Konpaniku</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="profile.html" class="nav-item nav-link">Our Profile</a>
+                        <a href="#" class="nav-item nav-link">Portfolio</a>
+                    </div>
+                    <a href="#message" class="btn btn-primary py-2 px-4" style="border-radius: 8px; ">Message Us</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container my-5 py-5">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="display-3 text-white animated slideInLeft">Hi <span id="output">Kamu</span>,<br>Welcome to Konpaniku!</h1>
+                            <p class="text-white animated slideInLeft mb-4 pb-2">Ini adalah website latihan pertama</p>
+                            <a href="#message" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Message Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Headquarter -->
+        <div class="container-xxl pb-3">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="ff-secondary text-center text-primary">ヘッドクォーター</h5>
+                    <h2 class="mb-5">Our Headquarter</h2>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="img/bandung.png" alt="">
+                            </div>
+                            <h5 class="mb-0">Bandung</h5>
+                            <small>バンドン</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fa-solid fa-map-location-dot"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="img/jakarta.png" alt="">
+                            </div>
+                            <h5 class="mb-0">Jakarta</h5>
+                            <small>ジャカルタ</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fa-solid fa-map-location-dot"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="img/surabaya.png" alt="">
+                            </div>
+                            <h5 class="mb-0">Surabaya</h5>
+                            <small>スラバヤ</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fa-solid fa-map-location-dot"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href="#"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Headquarter End -->
+
+        <!-- Message Us Start -->
+        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s" id="message">
+            <div class="row g-0">
+                <div class=" bg-dark d-flex align-items-center justify-content-center">
+                    <div class="col-md-6 p-5 wow fadeInUp text-center" data-wow-delay="0.2s">
+                        <h5 class="ff-secondary text-center text-primary">メッセージ</h5>
+                        <h2 class="text-white mb-4">Message Us</h2>
+                        <form onsubmit="submitForm(event)">
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Nama" required="required">
+                                        <label for="name">Nama</label>
+                                    </div>
+                                </div>
+ 
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="date" class="form-control datetimepicker-input" id="date" placeholder="Tanggal Lahir" required="required"/>
+                                        <label for="datetime">Tanggal Lahir</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="select1" required>
+                                            <option value="" selected disabled>Pilih...</option>
+                                            <option value="Laki-laki">Laki-laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                        </select>
+                                        <label for="select1">Jenis Kelamin</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="input-message" placeholder="Pesan" style="height: 100px"></textarea>
+                                        <label for="message">Pesan</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-2" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Message Us Start -->   
+
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="text-center">
+                    <h5 class="ff-secondary text-center text-primary">テスティモーニアル</h5>
+                    <h2 class="mb-5">What People Say</h2>
+                </div>
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p><span id="output-message">Your message will be displayed here.</span></p>
+                        <div class="d-flex align-items-center">
+                            <div class="ps-3">
+                                <h5 class="mb-1"><span id="output-name"></span></h5>
+                                <small><span id="output-gender"></span></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ps-3">
+                                <h5 class="mb-1">Amelia (24)</h5>
+                                <small>Perempuan</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>Ultricies tristique nulla aliquet enim tortor. Maecenas pharetra convallis posuere morbi leo urna molestie at.</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ps-3">
+                                <h5 class="mb-1">Marwan (32)</h5>
+                                <small>Laki-laki</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>Nam at lectus urna duis convallis convallis tellus id interdum. Adipiscing tristique risus nec feugiat in fermentum posuere.</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ps-3">
+                                <h5 class="mb-1">Intan (19)</h5>
+                                <small>Perempuan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-2 text-center">
+                <h5 class="ff-secondary text-center text-primary mb-2">コンタクト</h5>
+                <p class="mb-2">Reach me out!</p>
+                <div class="d-flex pt-0 justify-content-center">
+                    <a class="btn btn-outline-light btn-social" href="mailto:lighterland@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/barklight/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+    function submitForm(event){
+        event.preventDefault(); // Prevent form submission
+        
+        var name = document.getElementById('name').value;
+        var date = document.getElementById('date').value;
+        var gender = document.getElementById('select1').value;
+        var message = document.getElementById('input-message').value;
+
+        var today = new Date();
+        var birthDate = new Date(date);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var monthDiff = today.getMonth() - birthDate.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        
+        document.getElementById('output-name').textContent = name + ' (' + age + ')';
+        document.getElementById('output-gender').innerHTML = gender
+        document.getElementById('output-message').innerHTML = message
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        var popup = document.getElementById('popup');
+
+        // Check if the popup has been shown before
+        var hasShownPopup = localStorage.getItem('hasShownPopup');
+        if (!hasShownPopup) {
+            popup.classList.add('show-popup');
+            document.body.style.overflow = 'hidden'; // Disable scrolling on the body
+        }
+    });
+
+    function handleKeyDown(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent form submission
+            closePopup(); // Call the closePopup function
+        }
+    }
+
+    function closePopup(){
+
+        var nameInput = document.getElementById('nameInput').value;
+        document.getElementById('output').innerHTML = nameInput;
+
+        if (nameInput === '') {
+            document.getElementById('error').textContent = 'Please enter your name.';
+        } else {
+            popup.classList.add("close-popup");
+            document.getElementById('navbar').style.visibility = 'visible';
+            document.body.style.overflow = 'visible'
+
+        }
+
+    }
+
+
+    </script>
+
+
+</body>
+</html>
